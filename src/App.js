@@ -1,42 +1,28 @@
-import Button from './Button'
-import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go'
+import ButtonPage from './pages/ButtonPags'
+import Accordion from './components/Accordion'
 
 function App() {
-  const handleClick = () => {
-    console.log('Clicked')
-  }
+  const items = [
+    {
+      id: 1,
+      label: 'Can I use React on a project',
+      content: 'You can use React on any project you want.',
+    },
+    {
+      id: 2,
+      label: 'Can I use JS on a project',
+      content: 'You can use JS on any project you want.',
+    },
+    {
+      id: 3,
+      label: 'Can I use BootStrap on a project',
+      content: 'You can use BootStrap on any project you want.',
+    },
+  ]
   return (
     <div>
-      <div>
-        <Button
-          primary
-          outline
-          onClick={handleClick}
-          className='my-5'>
-          <GoBell />
-          Click me
-        </Button>
-      </div>
-      <div>
-        <Button secondary>
-          <GoCloudDownload />
-          Hide ads
-        </Button>
-      </div>
-      <div>
-        <Button warning>Buy now</Button>
-      </div>
-      <div>
-        <Button
-          danger
-          rounded>
-          <GoDatabase />
-          Delete
-        </Button>
-        <div>
-          <Button success>Delete</Button>
-        </div>
-      </div>
+      <ButtonPage />
+      <Accordion items={items} />
     </div>
   )
 }
